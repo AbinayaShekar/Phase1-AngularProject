@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h1 class="text-center mb-4" style="background-color: lightblue; color: rgb(91, 144, 91);">ADD PROJECT DETAILS </h1>
+        <div class="form-group">
+          <label for="projectId">PROJECT-ID:</label>
+          <input type="number" class="form-control" id="projectId" [(ngModel)]="projectId" />
+        </div>
+        <div class="form-group">
+          <label for="projectName">PROJECT-NAME:</label>
+          <input type="text" class="form-control" id="projectName" [(ngModel)]="projectName" />
+        </div>
+        <div class="form-group">
+            <label for="projectDescription">PROJECT-DESCRIPTION:</label>
+            <input type="text" class="form-control" id="projectDescription" [(ngModel)]="projectDescription" />
+          </div>
+        <div class="form-group">
+          <label for="ExpectedDateOfDelivery">EXPECTEDDATE:</label>
+          <input type="date" class="form-control" id="ExpectedDateOfDelivery" [(ngModel)]="ExpectedDateOfDelivery    " />
+        </div>
+        <div class="form-group">
+            <label for="TeamOwned">TEAM-OWNED:</label>
+            <input type="text" class="form-control" id="TeamOwned" [(ngModel)]="TeamOwned" />
+          </div>
+        <button class="btn btn-primary" (click)="addProject()">Add Project</button>
+        <br>
+        <div style="margin-top: 20px;"> <!-- Add space -->
+          <button class="btn btn-secondary btn-sm" (click)="goBack()">Back</button> <!-- Small button -->
+        </div>
+        <div class="alert alert-success mt-3" *ngIf="message">{{ message }}</div>
+      </div>
+    </div>
+  </div>
+  

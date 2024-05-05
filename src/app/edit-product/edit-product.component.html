@@ -1,0 +1,22 @@
+<h1>Edit Product</h1>
+<div>
+    <label>ID:</label>
+    <input type="number" [(ngModel)]="id"/>
+</div>
+
+<div>
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="name"/>
+</div>
+
+<div>
+    <label>Orderdate:</label>
+    <input type="date" [(ngModel)]="orderdate"/>
+</div>
+
+<div>
+    <label>Ordertime:</label>
+    <input type="time" [(ngModel)]="ordertime"/>
+</div>
+
+<button (click)="updateProduct()">Update Product</button>

@@ -1,0 +1,54 @@
+<h1 class="text-center  font-weight-bold" style="background-color: #042303; color: white; padding: 10px;">HENNA PROJECT MANAGEMENT SOLUTIONS</h1>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">Registration</h3>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" formControlName="username" placeholder="Enter username">
+              <div *ngIf="registrationForm.get('username')?.errors?.['required'] && (registrationForm.get('username')?.dirty || registrationForm.get('username')?.touched)" class="invalid-feedback">
+                <div *ngIf="registrationForm.get('username')?.errors?.['required']">Username is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" formControlName="email" placeholder="Enter email">
+              <div *ngIf="registrationForm.get('email')?.errors?.['required'] && (registrationForm.get('email')?.dirty || registrationForm.get('email')?.touched)" class="invalid-feedback">
+                <div *ngIf="registrationForm.get('email')?.errors?.['required']">Email is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" class="form-control" id="phone" formControlName="phone" placeholder="Enter phone number">
+              <div *ngIf="registrationForm.get('phone')?.errors?.['required'] && (registrationForm.get('phone')?.dirty || registrationForm.get('phone')?.touched)" class="invalid-feedback">
+                <div *ngIf="registrationForm.get('phone')?.errors?.['required']">Phone number is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
+              <div *ngIf="registrationForm.get('password')?.errors?.['required'] && (registrationForm.get('password')?.dirty || registrationForm.get('password')?.touched)" class="invalid-feedback">
+                <div *ngIf="registrationForm.get('password')?.errors?.['required']">Password is required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <textarea class="form-control" id="address" formControlName="address" placeholder="Enter address"></textarea>
+              <div *ngIf="registrationForm.get('address')?.errors?.['required'] && (registrationForm.get('address')?.dirty || registrationForm.get('address')?.touched)" class="invalid-feedback">
+                <div *ngIf="registrationForm.get('address')?.errors?.['required']">Address is required</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">Register</button>
+          </form>
+          <div *ngIf="registrationError" class="alert alert-danger mt-3">{{ registrationError }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

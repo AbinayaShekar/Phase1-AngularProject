@@ -1,0 +1,30 @@
+<p>view-project works!</p>
+<div class="container mt-5">
+    <h1 class="text-center mb-4" style="background-color: lightblue; color: rgb(6, 52, 6);">VIEW PROJECT DETAILS</h1>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="thead-dark">
+          <tr>
+            <th>PROJECT-ID</th>
+            <th>PROJECT-NAME</th>
+            <th>PROJECT-DESCRIPTION</th>
+            <th>EXPECTEDDATE</th>
+            <th>TEAMOWNED</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of projects">
+            <td>{{ project.projectId }}</td>
+            <td>{{ project.projectName }}</td>
+            <td>{{ project.projectDescription }}</td>
+            <td>{{ project.ExpectedDateOfDelivery | date: 'dd/MM/yy' }}</td>
+            <td>{{ project.TeamOwned }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="col-md-6">
+        <button class="btn btn-secondary btn-block" (click)="goBack()">Back</button>
+    </div>
+    </div>
+  </div>
+  
